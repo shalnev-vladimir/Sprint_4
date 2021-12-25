@@ -14,8 +14,11 @@ public class Account {
             return false;
         }
 
-         return name.length() >= 3 && name.length() <= 19 &&
-                 name.length() - name.replace(" ", "").length() == 1 &&
-                 !name.replace(" ", "").equals(name);
+         return name.length() >= 3 &&
+                 name.length() <= 19 &&
+                 name.length() - name.replace(" ", "").length() <= 1 &&
+                 !name.replace(" ", "").equals(name) &&
+                 !name.startsWith(" ") &&
+                 !name.endsWith(" ");
     }
 }
